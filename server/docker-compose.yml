@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: your-dockerhub-username/birdBrain:latest
+    env_file:
+      - birdBrain-env
+    ports:
+      - "3000:3000"
