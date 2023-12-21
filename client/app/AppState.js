@@ -7,6 +7,9 @@ class ObservableAppState extends EventEmitter {
   // @ts-ignore
   account = null
 
+  /** @type {import('./models/Bird.js').Bird[]} */
+  birds = []
+
   // Used to load initial data
   init() {
 
