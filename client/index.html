@@ -19,7 +19,21 @@
   <!-- SECTION -->
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
-      <section class="bg-white text-light">Stinky code i don't want. it's old who did this?</section>
+      <a class="navbar-brand" href="#">
+        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
+          loading="lazy">
+        <span class="ml-2">birdBrain</span>
+      </a>
+      <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#birdFormModal">
+        <img class="USA-USA" src="/assets/img/eagle-button.png" alt="Eagle button">
+      </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      </div>
+      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
 
@@ -38,6 +52,55 @@
       <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
     </div>
   </footer>
+
+  <!-- Bird Form Modal -->
+  <div class="modal fade" id="birdFormModal" tabindex="-1" aria-labelledby="birdFormLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="birdFormLabel">Create Bird</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form onsubmit="app.BirdsController.createBird()">
+            <div class="mb-3">
+              <label for="name">Name of Bird</label>
+              <input class="w-100" id="name" type="text" maxlength="50" minlength="3" required name="name">
+            </div>
+            <div class="mb-3">
+              <label for="imgUrl">Image of Bird</label>
+              <input class="w-100" id="imgUrl" type="url" maxlength="500" name="imgUrl">
+            </div>
+            <div class="mb-3">
+              <label for="description">Description of Bird</label>
+              <textarea name="description" id="description" class="w-100" rows="10" maxlength="500"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="size">Size of Bird</label>
+              <select name="size" id="size" required>
+                <option value="regular" selected>Regular</option>
+                <option value="chunky">Chunky</option>
+                <option value="miniature">Miniature</option>
+                <option value="vin diesel XXXL">Vin Diesel XXXL</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="canFly">Can this bird fly?</label>
+              <input type="checkbox" name="canFly" id="canFly">
+            </div>
+            <div class="text-end">
+              <button type="submit">Create Bird</button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>

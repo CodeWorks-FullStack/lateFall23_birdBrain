@@ -1,1 +1,30 @@
 /* BASIC STYLES HERE */
+
+label{
+  display: block;
+}
+
+.bg-superior-blue{
+  background-color: #88CDDD;
+}
+
+.bird-img{
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.creator-picture{
+  height: 7.8vh;
+  width: 7.8vh;
+  border-radius: 50%;
+}
+
+.electric-shadow{
+  box-shadow: 5px 5px rgb(250, 250, 2);
+}
+
+.USA-USA{
+  height: 200px;
+
+}

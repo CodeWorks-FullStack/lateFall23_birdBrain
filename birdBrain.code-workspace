@@ -33,17 +33,17 @@
     "eslint.lintTask.enable": true,
     "eslint.codeActionsOnSave.mode": "all",
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll": "explicit"
     },
     "workbench.colorCustomizations": {
-      "activityBar.activeBackground": "#6902ce",
-      "activityBar.background": "#6902ce",
+      "activityBar.activeBackground": "#8306fd",
+      "activityBar.background": "#8306fd",
       "activityBar.foreground": "#e7e7e7",
       "activityBar.inactiveForeground": "#e7e7e799",
-      "activityBarBadge.background": "#201000",
+      "activityBarBadge.background": "#3f2001",
       "activityBarBadge.foreground": "#e7e7e7",
       "commandCenter.border": "#e7e7e799",
-      "sash.hoverBorder": "#6902ce",
+      "sash.hoverBorder": "#8306fd",
       "statusBar.background": "#6902ce",
       "statusBar.debuggingBackground": "#67ce02",
       "statusBar.debuggingForeground": "#15202b",
