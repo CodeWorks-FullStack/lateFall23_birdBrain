@@ -24,7 +24,8 @@
           loading="lazy">
         <span class="ml-2">birdBrain</span>
       </a>
-      <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#birdFormModal">
+      <button title="Open bird form" class="btn btn-outline-dark" data-bs-toggle="modal"
+        data-bs-target="#birdFormModal">
         <img class="USA-USA" src="/assets/img/eagle-button.png" alt="Eagle button">
       </button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -98,6 +99,47 @@
 
         </div>
 
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="birdDetailsModal" tabindex="-1" aria-labelledby="birdDetailsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="birdDetailsModalLabel">Bird Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="activeBirdHabitat">
+          <!-- <div class="container-fluid">
+            <section class="row">
+              <div class="col-12 col-md-8">
+                <img class="img-fluid" src="https://media.tenor.com/4L99Hv5dVK4AAAAC/shoebill-the-w.gif" alt="">
+              </div>
+              <div class="col-12 col-md-4">
+                <h2>Randy</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet officiis dolorum dolorem quasi animi
+                  libero quod sint saepe officia vitae?</p>
+                <h3>On 12/25/2023</h3>
+                <h3>At 10:30PM</h3>
+                <h3>✈️</h3>
+                <h3>🍗</h3>
+              </div>
+            </section>
+            <section class="row">
+              <div class="col-2">
+                <img class="creator-picture" src="https://unblob.blob.core.windows.net/authpics/Hato.png"
+                  alt="creator name goes here">
+              </div>
+            </section>
+          </div> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
   </div>

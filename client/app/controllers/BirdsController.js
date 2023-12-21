@@ -13,13 +13,19 @@ function _drawBirds() {
   setHTML('birdsHabitat', birdContent)
 }
 
+function _drawActiveBird() {
+  const bird = AppState.activeBird
+  setHTML('activeBirdHabitat', bird.ActiveBirdTemplate)
+}
 
 export class BirdsController {
   constructor () {
     console.log('Birds loaded 🦃');
     this.getBirds()
     AppState.on('birds', _drawBirds)
+    AppState.on('activeBird', _drawActiveBird)
   }
+
 
   async getBirds() {
     try {
@@ -51,4 +57,11 @@ export class BirdsController {
       Pop.error(error.message)
     }
   }
+
+  setActiveBird(birdId) {
+    console.log('Bird ID:', birdId);
+    birdsService.setActiveBird(birdId)
+  }
+
+
 }

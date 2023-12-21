@@ -5,18 +5,18 @@ import { birdWatchersService } from "../services/BirdWatchersService.js";
 
 
 
-export class BirdsController extends BaseController{
-  constructor(){
+export class BirdsController extends BaseController {
+  constructor () {
     super('api/birds')
     this.router
-    .get('', this.getBirds)
-    .get('/:birdId', this.getBirdById)
-    .get('/:birdId/watchers', this.getBirdWatchers)
-    .use(Auth0Provider.getAuthorizedUserInfo)
-    .post('', this.createBird)
+      .get('', this.getBirds)
+      .get('/:birdId', this.getBirdById)
+      .get('/:birdId/watchers', this.getBirdWatchers)
+      .use(Auth0Provider.getAuthorizedUserInfo)
+      .post('', this.createBird)
   }
 
-  async getBirds(request, response, next){
+  async getBirds(request, response, next) {
     try {
       const birds = await birdsService.getBirds()
       response.send(birds)
@@ -25,7 +25,7 @@ export class BirdsController extends BaseController{
     }
   }
 
-  async getBirdById(request, response, next){
+  async getBirdById(request, response, next) {
     try {
       const birdId = request.params.birdId
       const bird = await birdsService.getBirdById(birdId)
@@ -35,7 +35,7 @@ export class BirdsController extends BaseController{
     }
   }
 
-  async getBirdWatchers(request, response, next){
+  async getBirdWatchers(request, response, next) {
     try {
       const birdId = request.params.birdId
       const watchers = await birdWatchersService.getBirdWatchers(birdId)
@@ -45,7 +45,7 @@ export class BirdsController extends BaseController{
     }
   }
 
-  async createBird(request, response, next){
+  async createBird(request, response, next) {
     try {
       const birdData = request.body
       const userInfo = request.userInfo

@@ -4,17 +4,19 @@ export class Bird {
     this.name = data.name
     this.size = data.size
     this.imgUrl = data.imgUrl
+    this.description = data.description || 'Mick did not fill this out'
     this.canFly = data.canFly
     this.creatorId = data.creatorId
     this.creator = data.creator
-    this.createdAt = data.createdAt
-    this.updatedAt = data.updatedAt
+    this.createdAt = new Date(data.createdAt)
+    this.updatedAt = new Date(data.updatedAt)
   }
 
   get BirdCardTemplate() {
     return `
     <div class="col-12 col-md-3 mb-3">
-      <div class="rounded border border-3 border-dark electric-shadow">
+      <div onclick="app.BirdsController.setActiveBird('${this.id}')" role="button" class="rounded border border-3 border-dark electric-shadow" title="See details about ${this.name}" data-bs-toggle="modal"
+      data-bs-target="#birdDetailsModal">
         <img class="bird-img rounded-top" src="${this.imgUrl}"
           alt="Picture of ${this.name}">
         <div class="p-3 bg-superior-blue d-flex justify-content-between">
@@ -28,6 +30,41 @@ export class Bird {
       </div>
     </div>
     `
+  }
+
+  get ActiveBirdTemplate() {
+    return `
+    <div class="container-fluid">
+    <section class="row mb-3">
+      <div class="col-12 col-md-8">
+        <img class="img-fluid" src="${this.imgUrl}" alt="${this.name}">
+      </div>
+      <div class="col-12 col-md-4">
+        <h2>${this.name}</h2>
+        <p>${this.description}</p>
+        <h3>On ${this.createdAtDate}</h3>
+        <h3>At ${this.createdAtTime}</h3>
+        <h3>${this.flightEmoji}</h3>
+        <button onclick="app.BirdWatchersController.createBirdWatcher()" class="btn btn-success">I've seen that bird!</button>
+      </div>
+    </section>
+    <section id="birdWatchers" class="row">
+      
+    </section>
+  </div>
+    `
+  }
+
+  get createdAtDate() {
+    return this.createdAt.toLocaleDateString()
+  }
+
+  get createdAtTime() {
+    return this.createdAt.toLocaleTimeString()
+  }
+
+  get flightEmoji() {
+    return this.canFly ? '🪽' : '🍗'
   }
 }
 
